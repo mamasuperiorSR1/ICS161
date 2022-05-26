@@ -9,8 +9,16 @@ BlendTree:
   m_Name: Left Rudder Right
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: c7ba12c9cd30f9740becca5ea7e0f594, type: 2}
+    m_Motion: {fileID: 0}
     m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Left Rudder Left
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: c7ba12c9cd30f9740becca5ea7e0f594, type: 2}
+    m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -20,7 +28,7 @@ BlendTree:
   m_BlendParameterY: Left Rudder Left
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!206 &-7282449952074756953
@@ -278,7 +286,7 @@ BlendTree:
   m_Name: Left Rudder Left
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: f6e4ea42ce9d08740b331676f3f5b076, type: 2}
+    m_Motion: {fileID: 0}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -286,8 +294,8 @@ BlendTree:
     m_DirectBlendParameter: Left Rudder Left
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 0}
-    m_Threshold: 0
+    m_Motion: {fileID: 7400000, guid: f6e4ea42ce9d08740b331676f3f5b076, type: 2}
+    m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -296,7 +304,7 @@ BlendTree:
   m_BlendParameter: Left Rudder Left
   m_BlendParameterY: Left Rudder Left
   m_MinThreshold: 0
-  m_MaxThreshold: 0
+  m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
@@ -335,8 +343,16 @@ BlendTree:
   m_Name: Right Elevator Up
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 09b42440a0d468444a7ea54b492797ad, type: 2}
+    m_Motion: {fileID: 0}
     m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Left Rudder Left
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 09b42440a0d468444a7ea54b492797ad, type: 2}
+    m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -346,7 +362,7 @@ BlendTree:
   m_BlendParameterY: Left Rudder Left
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!206 &-2565046841871714445
@@ -358,8 +374,16 @@ BlendTree:
   m_Name: Right Rudder Right
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 5ff58e5634a59b847aabad3f6a22c17c, type: 2}
+    m_Motion: {fileID: 0}
     m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Left Rudder Left
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 5ff58e5634a59b847aabad3f6a22c17c, type: 2}
+    m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -369,7 +393,7 @@ BlendTree:
   m_BlendParameterY: Left Rudder Left
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!206 &-1653929405730418833
@@ -427,73 +451,73 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Left Rudder Right
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Right Rudder Left
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Right Rudder Right
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Left Elevator Up
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Left Elevator Down
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Right Elevator Up
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Right Elevator Down
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Front Landing Gear Up
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Front Landing Gear Down
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Rear Landing Gear Up
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Rear Landing Gear Down
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -578,8 +602,16 @@ BlendTree:
   m_Name: Front Landing Gear Up
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: f47e81dd57abd38438b826d0efd68459, type: 2}
+    m_Motion: {fileID: 0}
     m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Left Rudder Left
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: f47e81dd57abd38438b826d0efd68459, type: 2}
+    m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -589,7 +621,7 @@ BlendTree:
   m_BlendParameterY: Left Rudder Left
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!1102 &3663123479893153055
@@ -627,8 +659,16 @@ BlendTree:
   m_Name: Left Elevator Up
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: bdcf32968364322458817fb7a8401301, type: 2}
+    m_Motion: {fileID: 0}
     m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Left Rudder Left
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: bdcf32968364322458817fb7a8401301, type: 2}
+    m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -638,7 +678,7 @@ BlendTree:
   m_BlendParameterY: Left Rudder Left
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!1102 &5005985142645001953
@@ -760,8 +800,16 @@ BlendTree:
   m_Name: Rear Landing Gear Up
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 856e9e98533d6a541bc337946ba144de, type: 2}
+    m_Motion: {fileID: 0}
     m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Left Rudder Left
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 856e9e98533d6a541bc337946ba144de, type: 2}
+    m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -771,7 +819,7 @@ BlendTree:
   m_BlendParameterY: Left Rudder Left
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!1102 &6302532406047964091
@@ -850,8 +898,16 @@ BlendTree:
   m_Name: Left Elevator Down
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 988bd289a4ec21f48880e7a8d7b7b132, type: 2}
+    m_Motion: {fileID: 0}
     m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Left Rudder Left
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 988bd289a4ec21f48880e7a8d7b7b132, type: 2}
+    m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -861,7 +917,7 @@ BlendTree:
   m_BlendParameterY: Left Rudder Left
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!206 &7134257557723786243
@@ -873,8 +929,16 @@ BlendTree:
   m_Name: Right Rudder Left
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: ecde11d264ca1a74ea70a46e82cd33b0, type: 2}
+    m_Motion: {fileID: 0}
     m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Left Rudder Left
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: ecde11d264ca1a74ea70a46e82cd33b0, type: 2}
+    m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -884,7 +948,7 @@ BlendTree:
   m_BlendParameterY: Left Rudder Left
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!206 &7214362340083472789
@@ -953,8 +1017,16 @@ BlendTree:
   m_Name: Rear Landing Gear Down
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: dab5b9314de92cc4cb9cbf4c9c06d4bd, type: 2}
+    m_Motion: {fileID: 0}
     m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Left Rudder Left
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: dab5b9314de92cc4cb9cbf4c9c06d4bd, type: 2}
+    m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -964,7 +1036,7 @@ BlendTree:
   m_BlendParameterY: Left Rudder Left
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!1102 &7566140440628293925
@@ -1028,8 +1100,16 @@ BlendTree:
   m_Name: ' Front Landing Gear Down'
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 40af2809569125647a005699aaeae5de, type: 2}
+    m_Motion: {fileID: 0}
     m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Left Rudder Left
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 40af2809569125647a005699aaeae5de, type: 2}
+    m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -1039,7 +1119,7 @@ BlendTree:
   m_BlendParameterY: Left Rudder Left
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!206 &8298680381174483857
@@ -1051,8 +1131,16 @@ BlendTree:
   m_Name: Right Elevator Down
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: cfac16cb50a284342882c8dfccc7d37d, type: 2}
+    m_Motion: {fileID: 0}
     m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Left Rudder Left
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: cfac16cb50a284342882c8dfccc7d37d, type: 2}
+    m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -1062,7 +1150,7 @@ BlendTree:
   m_BlendParameterY: Left Rudder Left
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!206 &8961582753666970954

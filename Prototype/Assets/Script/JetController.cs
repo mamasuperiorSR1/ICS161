@@ -32,13 +32,8 @@ public class JetController : MonoBehaviour
     private const float kmToKnots = 0.5399f;
     private const float aerodynamicEffect = 0.1f;
 
-    void Update()
+    private void Start()
     {
-        //Clear old values
-        pitch = 0f;
-        roll = 0f;
-        yaw = 0f;
-
         anim.SetFloat("Left Rudder Left", 0f);
         anim.SetFloat("Left Rudder Right", 0f);
         anim.SetFloat("Right Rudder Left", 0f);
@@ -51,67 +46,112 @@ public class JetController : MonoBehaviour
         anim.SetFloat("Front Landing Gear Down", 0f);
         anim.SetFloat("Rear Landing Gear Up", 0f);
         anim.SetFloat("Rear Landing Gear Down", 0f);
+    }
+
+    private void Update()
+    {
+        //Clear old values
+        pitch = 0f;
+        roll = 0f;
+        yaw = 0f;
 
         if (height > 100f)
         {
-            anim.SetFloat("Front Landing Gear Up", 1f);
-            anim.SetFloat("Rear Landing Gear Up", 1f);
+            anim.SetFloat("Front Landing Gear Up", 1f, 0.1f, Time.deltaTime);
+            anim.SetFloat("Rear Landing Gear Up", 1f, 0.1f, Time.deltaTime);
         }
 
         if (height < 100f)
         {
-            anim.SetFloat("Front Landing Gear Down", 1f);
-            anim.SetFloat("Rear Landing Gear Down", 1f);
+            anim.SetFloat("Front Landing Gear Down", 1f, 0.1f, Time.deltaTime);
+            anim.SetFloat("Rear Landing Gear Down", 1f, 0.1f, Time.deltaTime);
         }
 
         //Update control inputs
         if (Input.GetKey(KeyCode.Q))
         { 
             yaw = -1f;
-            anim.SetFloat("Left Rudder Left", 1f);
-            anim.SetFloat("Right Rudder Left", 1f);
+            anim.SetFloat("Left Rudder Left", 1f, 0.1f, Time.deltaTime);
+            anim.SetFloat("Right Rudder Left", 1f, 0.1f, Time.deltaTime);
         }
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            anim.SetFloat("Left Rudder Left", 0f);
+            anim.SetFloat("Right Rudder Left", 0f);
+        }
+
         if (Input.GetKey(KeyCode.E))
         {
             yaw = 1f;
-            anim.SetFloat("Left Rudder Right", 1f);
-            anim.SetFloat("Right Rudder Right", 1f);
+            anim.SetFloat("Left Rudder Right", 1f, 0.1f, Time.deltaTime);
+            anim.SetFloat("Right Rudder Right", 1f, 0.1f, Time.deltaTime);
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            anim.SetFloat("Left Rudder Right", 0f);
+            anim.SetFloat("Right Rudder Right", 0f);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             roll = 1f;
-            anim.SetFloat("Left Elevator Up", 1f);
-            anim.SetFloat("Right Elevator Down", 1f);
+            anim.SetFloat("Left Elevator Up", 1f, 0.1f, Time.deltaTime);
+            anim.SetFloat("Right Elevator Down", 1f, 0.1f, Time.deltaTime);
         }
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            roll = 1f;
+            anim.SetFloat("Left Elevator Up", 0f);
+            anim.SetFloat("Right Elevator Down", 0f);
+        }
+
+
         if (Input.GetKey(KeyCode.D))
         {
             roll = -1f;
-            anim.SetFloat("Left Elevator Down", 1f);
-            anim.SetFloat("Right Elevator Up", 1f);
+            anim.SetFloat("Left Elevator Down", 1f, 0.1f, Time.deltaTime);
+            anim.SetFloat("Right Elevator Up", 1f, 0.1f, Time.deltaTime);
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            roll = -1f;
+            anim.SetFloat("Left Elevator Down", 0f);
+            anim.SetFloat("Right Elevator Up", 0f);
         }
 
         if (Input.GetKey(KeyCode.W))
         {
             pitch = 1f;
-            anim.SetFloat("Left Elevator Down", 1f);
-            anim.SetFloat("Right Elevator Down", 1f);
+            anim.SetFloat("Left Elevator Down", 1f, 0.1f, Time.deltaTime);
+            anim.SetFloat("Right Elevator Down", 1f, 0.1f, Time.deltaTime);
         }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            pitch = 1f;
+            anim.SetFloat("Left Elevator Down", 0f);
+            anim.SetFloat("Right Elevator Down", 0f);
+        }
+
         if (Input.GetKey(KeyCode.S))
         {
             pitch = -1f;
-            anim.SetFloat("Left Elevator Up", 1f);
-            anim.SetFloat("Right Elevator Up", 1f);
+            anim.SetFloat("Left Elevator Up", 1f, 0.1f, Time.deltaTime);
+            anim.SetFloat("Right Elevator Up", 1f, 0.1f, Time.deltaTime);
+        }
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            pitch = -1f;
+            anim.SetFloat("Left Elevator Up", 0f);
+            anim.SetFloat("Right Elevator Up", 0f);
         }
 
         UpdateThrottle();
-        /*UpdateCamera();*/
 
         //Update height
         height = transform.position.y -1f;
     }
 
-    void UpdateThrottle()
+    private void UpdateThrottle()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -130,25 +170,17 @@ public class JetController : MonoBehaviour
             thrust = 100f;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             thrust += 10f;
         }
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl))
         {
             thrust -= 10f;
         }
 
         thrust = Mathf.Clamp(thrust, 0f, 100f);    
     }
-
-    /*void UpdateCamera()
-    {
-        if (Input.GetMouseButton(1))
-        {
-            mainCamera.updatePosition(Input.GetAxisRaw("Mouse X"), -Input.GetAxisRaw("Mouse Y"));
-        }
-    }*/
 
     private void FixedUpdate()
     {
