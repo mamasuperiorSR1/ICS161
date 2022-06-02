@@ -7,7 +7,10 @@ public class Destructible : MonoBehaviour
     [SerializeField] private GameObject plane;
     [SerializeField] private GameObject destroyedVersion;
     [SerializeField] private Collider JetCollider;
-    [SerializeField] private bool destroyed = false;
+    [SerializeField] public bool destroyed = false;
+    public AudioSource ohNo;
+
+    public List<GameObject> externalDestroy;
 
 
     private void OnCollisionEnter(Collision collision)
@@ -17,6 +20,11 @@ public class Destructible : MonoBehaviour
             Instantiate(destroyedVersion, transform.position, transform.rotation);
             plane.SetActive(false);
             destroyed = true;
+            foreach(var v in externalDestroy)
+            {
+                Destroy(v);
+            }
+            ohNo.Play();
         }
     }
 

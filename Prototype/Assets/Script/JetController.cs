@@ -32,6 +32,8 @@ public class JetController : MonoBehaviour
     private const float kmToKnots = 0.5399f;
     private const float aerodynamicEffect = 0.1f;
 
+    public List<ParticleSystem> ps;
+
     private void Start()
     {
         anim.SetFloat("Left Rudder Left", 0f);
@@ -147,12 +149,29 @@ public class JetController : MonoBehaviour
 
         UpdateThrottle();
 
+        foreach (var v in ps)
+        { 
+            if(throttle <= 0f)
+            {
+                v.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            } else
+            {
+                v.Play(true);
+            }
+        }
+
+
         //Update height
         height = transform.position.y -1f;
     }
 
     private void UpdateThrottle()
     {
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			Debug.Log("Quitting app...");
+			Application.Quit();
+		}
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             thrust = 0f;
@@ -170,11 +189,11 @@ public class JetController : MonoBehaviour
             thrust = 100f;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             thrust += 10f;
         }
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             thrust -= 10f;
         }
