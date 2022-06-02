@@ -186,7 +186,7 @@ public class JetController : MonoBehaviour
     {
         transform.RotateAround(transform.position, transform.up, yaw * Time.fixedDeltaTime * yawSpeed);     //Yaw
 
-        if (height > 2f)
+        if (height > 20f)
         {
             transform.RotateAround(transform.position, transform.forward, roll * Time.fixedDeltaTime * rollSpeed); //Roll
         }
