@@ -10,7 +10,7 @@ public class Destructible : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {  
-        if(plane.transform.position.y > 10)
+        if(plane.transform.position.y > 20000)
         {
             Instantiate(destroyedVersion, transform.position, transform.rotation);
             plane.SetActive(false);
