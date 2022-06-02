@@ -191,7 +191,7 @@ public class JetController : MonoBehaviour
             transform.RotateAround(transform.position, transform.forward, roll * Time.fixedDeltaTime * rollSpeed); //Roll
         }
 
-        if (rb.velocity.magnitude > 100f)
+        if (rb.velocity.magnitude > 300f)
         {
             transform.RotateAround(transform.position, transform.right, pitch * Time.fixedDeltaTime * pitchSpeed); //Pitch
         }
